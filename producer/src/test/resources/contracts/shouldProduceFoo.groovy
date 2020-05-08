@@ -10,6 +10,7 @@ Contract.make {
         sentTo('foo')
         headers {
             messagingContentType(applicationJson())
+            header(contentEncoding(), 'gzip:UTF-8')
         }
         body("""{"bar":"baz"}""")
     }
