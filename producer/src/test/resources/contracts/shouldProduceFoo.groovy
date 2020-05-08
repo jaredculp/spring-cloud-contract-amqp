@@ -9,9 +9,8 @@ Contract.make {
     outputMessage {
         sentTo('foo')
         headers {
-            messagingContentType(applicationJson())
-            header(contentEncoding(), 'gzip:UTF-8')
+            header('GZIP-Compression', 'true')
         }
-        body("""{"bar":"baz"}""")
+        body(fileAsBytes('foo.json.gz'))
     }
 }
